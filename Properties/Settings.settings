@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CaptIt.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="isShowEditorAfterCaptureSShot" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="isSaveAutoAfterCaptureSShot" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoSavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">NON_SET</Value>
+    </Setting>
+    <Setting Name="AutoSaveFileNumber" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="AutoSaveFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Image</Value>
+    </Setting>
+    <Setting Name="isShowCheckCapturedForm" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ImageSaveFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PNG</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
