@@ -52,8 +52,6 @@
             this.ShowInTaskbar = false;
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.White;
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.GetWindowProcess_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GetWindowProcess_MouseUp);
             this.ResumeLayout(false);
 
         }

@@ -354,14 +354,14 @@ namespace CaptIt
     public class WindowScreenShot : SShot
     {
         public override string shotType { get { return "WindowScreenShot"; } }
-        private Keys key = Keys.Shift | Keys.D1;
+        private Keys key = Keys.F12 | Keys.Alt | Keys.Control;
         public override Keys Key
         {
             get { return key; }
             set { key = value; }
         }
-        private Keys setKey = Keys.D1 | Keys.Alt | Keys.Control;
-        public Keys SetKey { get { return setKey; } set { setKey = value; } }
+        //private Keys setKey = Keys.D1 | Keys.Alt | Keys.Control;
+        //public Keys SetKey { get { return setKey; } set { setKey = value; } }
 
         public IntPtr windowHandle;
 
@@ -386,7 +386,7 @@ namespace CaptIt
         public void SetWindowHandle()
         {
             GetWindowProcess form = new GetWindowProcess();
-            form.GotHandle += (i) => { this.windowHandle = i; };
+            //form.GotHandle += (i) => { this.windowHandle = i; };
             form.ShowDialog();
         }
     }

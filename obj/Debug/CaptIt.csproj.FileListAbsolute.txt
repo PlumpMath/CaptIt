@@ -16,3 +16,21 @@ E:\Programming\C#\Windows Form\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_
 E:\Programming\C#\Windows Form\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.KeySet.resources
 E:\Programming\C#\Windows Form\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_HotKey.resources
 E:\Programming\C#\Windows Form\CaptIt\CaptIt\obj\Debug\CaptIt.GetWindowProcess.resources
+N:\C#\CaptIt\CaptIt\bin\Debug\CaptIt.exe.config
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.exe
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.pdb
+N:\C#\CaptIt\CaptIt\bin\Debug\CaptIt.exe
+N:\C#\CaptIt\CaptIt\bin\Debug\CaptIt.pdb
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.csprojResolveAssemblyReference.cache
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.dragForm.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.GetWindowProcess.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.ImageEditor.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.MainForm.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.Properties.Resources.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingForm.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.KeySet.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_AutoSave.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_HotKey.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_ImageViewer.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SShotCaptured.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.csproj.GenerateResource.Cache
