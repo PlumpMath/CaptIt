@@ -34,3 +34,5 @@ N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_HotKey.resources
 N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_ImageViewer.resources
 N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SShotCaptured.resources
 N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.csproj.GenerateResource.Cache
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_General.resources
+N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.UpdateForm.resources

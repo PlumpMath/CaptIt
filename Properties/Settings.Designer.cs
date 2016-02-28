@@ -106,5 +106,29 @@ namespace CaptIt.Properties {
                 this["ImageSaveFormat"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isShowForm {
+            get {
+                return ((bool)(this["isShowForm"]));
+            }
+            set {
+                this["isShowForm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isAutoStart {
+            get {
+                return ((bool)(this["isAutoStart"]));
+            }
+            set {
+                this["isAutoStart"] = value;
+            }
+        }
     }
 }

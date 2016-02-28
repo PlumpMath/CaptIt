@@ -23,8 +23,8 @@ namespace CaptIt.SettingPanels
             HotKeyManager.SaveKeySet(HotKeyManager.Hotkeys[0]);
             HotKeyManager.Hotkeys[1].Key = KS_DSS.Key;
             HotKeyManager.SaveKeySet(HotKeyManager.Hotkeys[1]);
-            HotKeyManager.Hotkeys[2].Key = KS_HD1.Key;
-            (HotKeyManager.Hotkeys[2] as HotKeyScreenShot).SetKey = KS_H1.Key;
+            HotKeyManager.Hotkeys[2].Key = KS_H1.Key;
+            (HotKeyManager.Hotkeys[2] as HotKeyScreenShot).SetKey = KS_HD1.Key;
             HotKeyManager.SaveHotKeySet(HotKeyManager.Hotkeys[2] as HotKeyScreenShot);
         }
 
@@ -32,8 +32,8 @@ namespace CaptIt.SettingPanels
         {
             this.KS_FSS.Key = HotKeyManager.GetKeySet(HotKeyManager.Hotkeys[0]);
             this.KS_DSS.Key = HotKeyManager.GetKeySet(HotKeyManager.Hotkeys[1]);
-            this.KS_HD1.Key = HotKeyManager.GetHotKeySet(HotKeyManager.Hotkeys[2] as HotKeyScreenShot)[0];
-            this.KS_H1.Key = HotKeyManager.GetHotKeySet(HotKeyManager.Hotkeys[2] as HotKeyScreenShot)[1];
+            this.KS_H1.Key = HotKeyManager.GetHotKeySet(HotKeyManager.Hotkeys[2] as HotKeyScreenShot)[0];
+            this.KS_HD1.Key = HotKeyManager.GetHotKeySet(HotKeyManager.Hotkeys[2] as HotKeyScreenShot)[1];
         }
     }
 }

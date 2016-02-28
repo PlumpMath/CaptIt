@@ -16,6 +16,7 @@ namespace CaptIt
         SET_ImageViewer ImageViewerForm = new SET_ImageViewer() { TopLevel = false };
         SET_AutoSave AutoSaveForm = new SET_AutoSave() { TopLevel = false };
         SET_HotKey HotKeyForm = new SET_HotKey() { TopLevel = false };
+        SET_General GeneralForm = new SET_General() { TopLevel = false };
 
         public SettingForm()
         {
@@ -24,10 +25,12 @@ namespace CaptIt
             ImageViewerForm.Parent = this.panel1;
             AutoSaveForm.Parent = this.panel1;
             HotKeyForm.Parent = this.panel1;
+            GeneralForm.Parent = this.panel1;
 
             ImageViewerForm.LoadSet();
             AutoSaveForm.LoadSet();
             HotKeyForm.LoadSet();
+            GeneralForm.LoadSet();
 
             ImageViewerForm.Show();
         }
@@ -37,6 +40,7 @@ namespace CaptIt
             ImageViewerForm.SaveSet();
             AutoSaveForm.SaveSet();
             HotKeyForm.SaveSet();
+            GeneralForm.SaveSet();
 
             this.Dispose();
         }
@@ -56,6 +60,7 @@ namespace CaptIt
             ImageViewerForm.Show();
             AutoSaveForm.Hide();
             HotKeyForm.Hide();
+            GeneralForm.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -63,6 +68,7 @@ namespace CaptIt
             AutoSaveForm.Show();
             ImageViewerForm.Hide();
             HotKeyForm.Hide();
+            GeneralForm.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -70,6 +76,15 @@ namespace CaptIt
             HotKeyForm.Show();
             AutoSaveForm.Hide();
             ImageViewerForm.Hide();
+            GeneralForm.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            HotKeyForm.Hide();
+            AutoSaveForm.Hide();
+            ImageViewerForm.Hide();
+            GeneralForm.Show();
         }
     }
 }

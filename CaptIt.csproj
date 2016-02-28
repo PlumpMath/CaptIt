@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Capture.cs" />
     <Compile Include="CaptureManager.cs" />
+    <Compile Include="CheckUpdate.cs" />
     <Compile Include="dragForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +102,12 @@
     <Compile Include="SettingPanels\SET_AutoSave.Designer.cs">
       <DependentUpon>SET_AutoSave.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingPanels\SET_General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingPanels\SET_General.Designer.cs">
+      <DependentUpon>SET_General.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingPanels\SET_HotKey.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +126,12 @@
     </Compile>
     <Compile Include="SShotCaptured.Designer.cs">
       <DependentUpon>SShotCaptured.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm.Designer.cs">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="dragForm.resx">
       <DependentUpon>dragForm.cs</DependentUpon>
@@ -151,6 +164,9 @@
     <EmbeddedResource Include="SettingPanels\SET_AutoSave.resx">
       <DependentUpon>SET_AutoSave.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingPanels\SET_General.resx">
+      <DependentUpon>SET_General.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SettingPanels\SET_HotKey.resx">
       <DependentUpon>SET_HotKey.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SShotCaptured.resx">
       <DependentUpon>SShotCaptured.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -8,11 +8,14 @@ namespace CaptIt
 {
     public partial class MainForm : Form
     {
+        private const string APPNAME = "CaptIt";
         private const string NAME = "캡칫 v0.0.4";
-        private const int VERSION = 3;
+        public const float VERSION = 0.04f;
 
         CaptureManager captureManager = new CaptureManager();
         public static Settings Setting = new Settings();
+
+        UpdateChecker update;
 
         class api
         {
@@ -37,6 +40,22 @@ namespace CaptIt
             //this.Region = Region.FromHrgn(api.CreateRoundRectRgn(0, 0, Width, Height, 50, 30));
 
             this.button1.Image = this.imageList1.Images[0];
+            if(!Setting.isShowForm)
+            {
+                this.Opacity = 0;
+            }
+
+            update = new UpdateChecker(APPNAME);
+            VERSION v = update.Get();
+            if(!v.SUCCEED)
+            {
+                MessageBox.Show("업데이트를 확인할 수 없습니다!");
+                return;
+            }
+            if(v.Version > VERSION)
+            {
+                NewVersionReleased(v);
+            }
         }
 
         ~MainForm()
@@ -44,6 +63,12 @@ namespace CaptIt
             this.notifyIcon1.Visible = false;
             this.notifyIcon1.Icon.Dispose();
             this.notifyIcon1.Dispose();
+        }
+
+        private void NewVersionReleased(VERSION v)
+        {
+            UpdateForm uf = new UpdateForm(v);
+            uf.ShowDialog();
         }
 
         private void 설정SToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,6 +122,20 @@ namespace CaptIt
         private void 영역지정캡쳐DToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HotKeyManager.Hotkeys[1].CaptureSShot();
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            if(Setting.isShowForm)
+            {
+                this.Opacity = 1;
+            }
+            else
+            {
+                this.Hide();
+                this.Opacity = 1;
+                this.Close();
+            }
         }
     }
     

@@ -93,7 +93,8 @@ namespace CaptIt
 
                         GC.Collect();
                         GC.WaitForPendingFinalizers();
-                        dragFinished(rect, ((Bitmap)firstScreen).Clone(rect, firstScreen.PixelFormat));
+                        if (!(width == 0 || height == 0))
+                            dragFinished(rect, ((Bitmap)firstScreen).Clone(rect, firstScreen.PixelFormat));
                         firstScreen.Dispose();
                     }
                     this.Dispose();

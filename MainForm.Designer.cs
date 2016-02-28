@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.전체화면캡쳐ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.전체화면캡쳐FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.영역지정캡쳐DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,21 +49,6 @@
             this.notifyIcon1.Text = "캡칫 v0.0.1b";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "그림__1.png");
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 76);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -83,6 +68,20 @@
             this.전체화면캡쳐ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.전체화면캡쳐ToolStripMenuItem.Text = "캡쳐하기(&C)";
             // 
+            // 전체화면캡쳐FToolStripMenuItem
+            // 
+            this.전체화면캡쳐FToolStripMenuItem.Name = "전체화면캡쳐FToolStripMenuItem";
+            this.전체화면캡쳐FToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.전체화면캡쳐FToolStripMenuItem.Text = "전체 화면 캡쳐(&F)";
+            this.전체화면캡쳐FToolStripMenuItem.Click += new System.EventHandler(this.전체화면캡쳐FToolStripMenuItem_Click);
+            // 
+            // 영역지정캡쳐DToolStripMenuItem
+            // 
+            this.영역지정캡쳐DToolStripMenuItem.Name = "영역지정캡쳐DToolStripMenuItem";
+            this.영역지정캡쳐DToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.영역지정캡쳐DToolStripMenuItem.Text = "영역 지정 캡쳐(&D)";
+            this.영역지정캡쳐DToolStripMenuItem.Click += new System.EventHandler(this.영역지정캡쳐DToolStripMenuItem_Click);
+            // 
             // 설정ToolStripMenuItem
             // 
             this.설정ToolStripMenuItem.Name = "설정ToolStripMenuItem";
@@ -97,19 +96,20 @@
             this.종료ToolStripMenuItem.Text = "종료(&X)";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료EToolStripMenuItem_Click);
             // 
-            // 전체화면캡쳐FToolStripMenuItem
+            // imageList1
             // 
-            this.전체화면캡쳐FToolStripMenuItem.Name = "전체화면캡쳐FToolStripMenuItem";
-            this.전체화면캡쳐FToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.전체화면캡쳐FToolStripMenuItem.Text = "전체 화면 캡쳐(&F)";
-            this.전체화면캡쳐FToolStripMenuItem.Click += new System.EventHandler(this.전체화면캡쳐FToolStripMenuItem_Click);
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "그림__1.png");
             // 
-            // 영역지정캡쳐DToolStripMenuItem
+            // button1
             // 
-            this.영역지정캡쳐DToolStripMenuItem.Name = "영역지정캡쳐DToolStripMenuItem";
-            this.영역지정캡쳐DToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.영역지정캡쳐DToolStripMenuItem.Text = "영역 지정 캡쳐(&D)";
-            this.영역지정캡쳐DToolStripMenuItem.Click += new System.EventHandler(this.영역지정캡쳐DToolStripMenuItem_Click);
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 76);
+            this.button1.TabIndex = 4;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
@@ -124,6 +124,7 @@
             this.Name = "MainForm";
             this.Text = "캣칫";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
             this.contextMenuStrip1.ResumeLayout(false);
