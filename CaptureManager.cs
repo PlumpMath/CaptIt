@@ -38,6 +38,12 @@ namespace CaptIt
                     HotKeyScreenShot captured = hotKeyManager.CaptureSetKeyed(k);
                     captured.SetRect();
                 }
+
+                if(hotKeyManager.isHandleHotKeyed(k))
+                {
+                    WindowScreenShot captured = hotKeyManager.CaptureHandleHotKeyed(k);
+                    captured.SetWindowHandle();
+                }
             }
         }
     }

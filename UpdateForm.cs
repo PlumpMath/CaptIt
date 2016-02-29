@@ -24,12 +24,12 @@ namespace CaptIt
         private void button1_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(v.DownloadLink);
-            Application.Exit();
+            MainForm.APPEXIT();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            MainForm.APPEXIT();
         }
 
         private void UpdateForm_Shown(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace CaptIt
 
         private void UpdateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            Application.Exit();
         }
     }
 }

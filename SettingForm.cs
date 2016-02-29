@@ -32,7 +32,7 @@ namespace CaptIt
             HotKeyForm.LoadSet();
             GeneralForm.LoadSet();
 
-            ImageViewerForm.Show();
+            GeneralForm.Show();
         }
         
         private void button2_Click(object sender, EventArgs e)
@@ -85,6 +85,12 @@ namespace CaptIt
             AutoSaveForm.Hide();
             ImageViewerForm.Hide();
             GeneralForm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Help h = new Help();
+            h.Show();
         }
     }
 }

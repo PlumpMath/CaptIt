@@ -9,8 +9,8 @@ namespace CaptIt
     public partial class MainForm : Form
     {
         private const string APPNAME = "CaptIt";
-        private const string NAME = "캡칫 v0.0.4";
-        public const float VERSION = 0.04f;
+        public const string NAME = "캡칫 v0.0.5";
+        public const float VERSION = 0.05f;
 
         CaptureManager captureManager = new CaptureManager();
         public static Settings Setting = new Settings();
@@ -63,6 +63,11 @@ namespace CaptIt
             this.notifyIcon1.Visible = false;
             this.notifyIcon1.Icon.Dispose();
             this.notifyIcon1.Dispose();
+        }
+
+        public static void APPEXIT()
+        {
+            Application.Exit();
         }
 
         private void NewVersionReleased(VERSION v)
@@ -136,6 +141,12 @@ namespace CaptIt
                 this.Opacity = 1;
                 this.Close();
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help h = new Help();
+            h.Show();
         }
     }
     

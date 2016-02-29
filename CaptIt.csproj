@@ -65,6 +65,12 @@
     <Compile Include="GetWindowProcess.Designer.cs">
       <DependentUpon>GetWindowProcess.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
     <Compile Include="HotKeyManager.cs" />
     <Compile Include="ImageEdit.cs" />
     <Compile Include="ImageEditor.cs">
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GetWindowProcess.resx">
       <DependentUpon>GetWindowProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageEditor.resx">
       <DependentUpon>ImageEditor.cs</DependentUpon>

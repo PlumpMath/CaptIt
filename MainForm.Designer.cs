@@ -37,6 +37,7 @@
             this.영역지정캡쳐DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
@@ -55,9 +56,10 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.전체화면캡쳐ToolStripMenuItem,
             this.설정ToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.종료ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
             // 
             // 전체화면캡쳐ToolStripMenuItem
             // 
@@ -65,7 +67,7 @@
             this.전체화면캡쳐FToolStripMenuItem,
             this.영역지정캡쳐DToolStripMenuItem});
             this.전체화면캡쳐ToolStripMenuItem.Name = "전체화면캡쳐ToolStripMenuItem";
-            this.전체화면캡쳐ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.전체화면캡쳐ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.전체화면캡쳐ToolStripMenuItem.Text = "캡쳐하기(&C)";
             // 
             // 전체화면캡쳐FToolStripMenuItem
@@ -85,16 +87,23 @@
             // 설정ToolStripMenuItem
             // 
             this.설정ToolStripMenuItem.Name = "설정ToolStripMenuItem";
-            this.설정ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.설정ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.설정ToolStripMenuItem.Text = "설정(&S)";
             this.설정ToolStripMenuItem.Click += new System.EventHandler(this.설정SToolStripMenuItem_Click);
             // 
             // 종료ToolStripMenuItem
             // 
             this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.종료ToolStripMenuItem.Text = "종료(&X)";
             this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료EToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Text = "도움말(&I)";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // imageList1
             // 
@@ -142,6 +151,7 @@
         private System.Windows.Forms.ToolStripMenuItem 영역지정캡쳐DToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 설정ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 종료ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

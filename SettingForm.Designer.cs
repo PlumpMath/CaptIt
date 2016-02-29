@@ -37,6 +37,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(527, 389);
+            this.button2.Location = new System.Drawing.Point(456, 389);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 23);
+            this.button2.Size = new System.Drawing.Size(222, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "설정";
             this.button2.UseVisualStyleBackColor = true;
@@ -120,11 +121,22 @@
             this.panel1.Size = new System.Drawing.Size(523, 356);
             this.panel1.TabIndex = 5;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(313, 389);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(137, 23);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "도움말";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 424);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button2);
@@ -149,5 +161,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button7;
     }
 }

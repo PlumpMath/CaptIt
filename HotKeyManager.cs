@@ -80,6 +80,24 @@ namespace CaptIt
             throw new Exception("HotKeyManager CaptureSetKeyed Not Exist in HotKeys List");
         }
 
+        public bool isHandleHotKeyed(Keys k)
+        {
+            foreach(SShot s in Hotkeys)
+            {
+                if (s is WindowScreenShot) if (((WindowScreenShot)s).SetKey == k) return true;
+            }
+            return false;
+        }
+
+        public WindowScreenShot CaptureHandleHotKeyed(Keys k)
+        {
+            foreach (SShot s in Hotkeys)
+            {
+                if (s is WindowScreenShot) if (((WindowScreenShot)s).SetKey == k) return (WindowScreenShot)s;
+            }
+            throw new Exception("HotKeyManager CaptureHandleHotKeyed Not Exist in HotKeys List");
+        }
+
         public static void SaveKeySet(SShot s)
         {
             MainForm.Setting.iniSave.WriteSetting("HotKey", s.shotType, s.Key.ToString());
@@ -354,14 +372,14 @@ namespace CaptIt
     public class WindowScreenShot : SShot
     {
         public override string shotType { get { return "WindowScreenShot"; } }
-        private Keys key = Keys.F12 | Keys.Alt | Keys.Control;
+        private Keys key = Keys.F11;
         public override Keys Key
         {
             get { return key; }
             set { key = value; }
         }
-        //private Keys setKey = Keys.D1 | Keys.Alt | Keys.Control;
-        //public Keys SetKey { get { return setKey; } set { setKey = value; } }
+        private Keys setKey = Keys.F11 | Keys.Shift;
+        public Keys SetKey { get { return setKey; } set { setKey = value; } }
 
         public IntPtr windowHandle;
 
