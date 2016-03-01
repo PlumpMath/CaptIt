@@ -18,6 +18,7 @@ namespace CaptIt
 
         #region ShowEditor
         public bool isShowEditorAfterCaptureSShot;
+        public bool isCopytoClipboard;
         #endregion
 
         #region AutoSave
@@ -43,6 +44,7 @@ namespace CaptIt
             LoadSettings();
 
             iniSave = new INISave(Environment.CurrentDirectory + "\\settings.ini");
+            SetStartup(isAutoStart);
         }
 
         public void LoadSettings()
@@ -50,6 +52,7 @@ namespace CaptIt
             this.isShowForm = Properties.Settings.Default.isShowForm;
             this.isAutoStart = Properties.Settings.Default.isAutoStart;
             this.isShowEditorAfterCaptureSShot = Properties.Settings.Default.isShowEditorAfterCaptureSShot;
+            this.isCopytoClipboard = Properties.Settings.Default.isCopytoClipboard;
             this.isSaveAutoAfterCaptureSShot = Properties.Settings.Default.isSaveAutoAfterCaptureSShot;
             this.AutoSavePath = Properties.Settings.Default.AutoSavePath;
             this.AutoSaveFileNumber = Properties.Settings.Default.AutoSaveFileNumber;
@@ -63,6 +66,7 @@ namespace CaptIt
             Properties.Settings.Default.isShowForm = this.isShowForm;
             Properties.Settings.Default.isAutoStart = this.isAutoStart;
             Properties.Settings.Default.isShowEditorAfterCaptureSShot = this.isShowEditorAfterCaptureSShot;
+            Properties.Settings.Default.isCopytoClipboard = this.isCopytoClipboard;
             Properties.Settings.Default.isSaveAutoAfterCaptureSShot = this.isSaveAutoAfterCaptureSShot;
             Properties.Settings.Default.AutoSavePath = this.AutoSavePath;
             Properties.Settings.Default.AutoSaveFileNumber = this.AutoSaveFileNumber;
@@ -70,6 +74,8 @@ namespace CaptIt
             Properties.Settings.Default.isShowCheckCapturedForm = this.isShowCheckCapturedForm;
             Properties.Settings.Default.ImageSaveFormat = this.ImageSaveFormat.ToString();
             Properties.Settings.Default.Save();
+
+            SetStartup(isAutoStart);
         }
 
         public int GETAutoSaveFileNumber()
@@ -100,9 +106,9 @@ namespace CaptIt
                         ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
             if (enabled)
-                rkey.SetValue("ProgramName", System.Windows.Forms.Application.ExecutablePath.ToString());
+                rkey.SetValue("CaptIt", System.Windows.Forms.Application.ExecutablePath.ToString());
             else
-                rkey.DeleteValue("ProgramName", false);
+                rkey.DeleteValue("CaptIt", false);
         }
     }
 }

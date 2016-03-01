@@ -90,7 +90,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(124, 23);
             this.button6.TabIndex = 2;
-            this.button6.Text = "핫키";
+            this.button6.Text = "단축키";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

@@ -36,8 +36,8 @@
             this.전체화면캡쳐FToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.영역지정캡쳐DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
@@ -59,7 +59,7 @@
             this.toolStripMenuItem1,
             this.종료ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 92);
             // 
             // 전체화면캡쳐ToolStripMenuItem
             // 
@@ -67,7 +67,7 @@
             this.전체화면캡쳐FToolStripMenuItem,
             this.영역지정캡쳐DToolStripMenuItem});
             this.전체화면캡쳐ToolStripMenuItem.Name = "전체화면캡쳐ToolStripMenuItem";
-            this.전체화면캡쳐ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.전체화면캡쳐ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.전체화면캡쳐ToolStripMenuItem.Text = "캡쳐하기(&C)";
             // 
             // 전체화면캡쳐FToolStripMenuItem
@@ -87,35 +87,35 @@
             // 설정ToolStripMenuItem
             // 
             this.설정ToolStripMenuItem.Name = "설정ToolStripMenuItem";
-            this.설정ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.설정ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.설정ToolStripMenuItem.Text = "설정(&S)";
             this.설정ToolStripMenuItem.Click += new System.EventHandler(this.설정SToolStripMenuItem_Click);
-            // 
-            // 종료ToolStripMenuItem
-            // 
-            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.종료ToolStripMenuItem.Text = "종료(&X)";
-            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료EToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
             this.toolStripMenuItem1.Text = "도움말(&I)";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // 종료ToolStripMenuItem
+            // 
+            this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
+            this.종료ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.종료ToolStripMenuItem.Text = "종료(&X)";
+            this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료EToolStripMenuItem_Click);
             // 
             // imageList1
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "그림__1.png");
+            this.imageList1.Images.SetKeyName(0, "dawdaw.png");
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 76);
+            this.button1.Size = new System.Drawing.Size(227, 76);
             this.button1.TabIndex = 4;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -125,13 +125,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(186, 99);
+            this.ClientSize = new System.Drawing.Size(251, 99);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
-            this.Text = "캣칫";
+            this.Text = "캡칫";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);

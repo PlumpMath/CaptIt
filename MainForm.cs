@@ -9,8 +9,8 @@ namespace CaptIt
     public partial class MainForm : Form
     {
         private const string APPNAME = "CaptIt";
-        public const string NAME = "캡칫 v0.0.5";
-        public const float VERSION = 0.05f;
+        public const string NAME = "캡칫 v0.0.6";
+        public const float VERSION = 0.06f;
 
         CaptureManager captureManager = new CaptureManager();
         public static Settings Setting = new Settings();

@@ -38,7 +38,7 @@ namespace CaptIt
             }
             return null;
         }
-        
+
         public Image CaptureWindow(IntPtr handle)
         {
             IntPtr hdcSrc = User32.GetWindowDC(handle);

@@ -37,3 +37,6 @@ N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.csproj.GenerateResource.Cache
 N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.SettingPanels.SET_General.resources
 N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.UpdateForm.resources
 N:\C#\CaptIt\CaptIt\obj\Debug\CaptIt.Help.resources
+N:\C#\CaptIt\CaptIt\bin\Debug\crosshair.cur
+N:\C#\CaptIt\CaptIt\bin\Debug\crosshair.png
+N:\C#\CaptIt\CaptIt\bin\Debug\cross.cur

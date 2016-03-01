@@ -35,8 +35,10 @@ namespace CaptIt
 
             foreach (SShot s in Hotkeys)
             {
-                if (s as HotKeyScreenShot != null)
+                if (s is HotKeyScreenShot)
                     SaveHotKeySet(s as HotKeyScreenShot);
+                else if (s is WindowScreenShot)
+                    SaveHandleKeySet((WindowScreenShot)s);
                 else
                     SaveKeySet(s);
             }
@@ -108,6 +110,11 @@ namespace CaptIt
             MainForm.Setting.iniSave.WriteSetting("HotKey", s.Code.ToString(), s.Key.ToString() + "|" + s.SetKey.ToString());
         }
 
+        public static void SaveHandleKeySet(WindowScreenShot s)
+        {
+            MainForm.Setting.iniSave.WriteSetting("HotKey", "handle", s.Key.ToString() + "|" + s.SetKey.ToString());
+        }
+
         public static Keys GetKeySet(SShot s)
         {
             return (Keys)Enum.Parse(typeof(Keys), MainForm.Setting.iniSave.GetSetting("HotKey", s.shotType));
@@ -116,6 +123,14 @@ namespace CaptIt
         public static Keys[] GetHotKeySet(HotKeyScreenShot s)
         {
             string[] str = MainForm.Setting.iniSave.GetSetting("HotKey", s.Code.ToString()).Split('|');
+            Keys k = (Keys)Enum.Parse(typeof(Keys), str[0]);
+            Keys setK = (Keys)Enum.Parse(typeof(Keys), str[1]);
+            return new Keys[] { k, setK };
+        }
+
+        public static Keys[] GetHandleKeySet(WindowScreenShot s)
+        {
+            string[] str = MainForm.Setting.iniSave.GetSetting("HotKey", "handle").Split('|');
             Keys k = (Keys)Enum.Parse(typeof(Keys), str[0]);
             Keys setK = (Keys)Enum.Parse(typeof(Keys), str[1]);
             return new Keys[] { k, setK };
@@ -147,7 +162,7 @@ namespace CaptIt
             }
         }
 
-        public static void SaveImage(Image img)
+        public static string SaveImage(Image img)
         {
             string path = string.Empty;
             try
@@ -182,6 +197,20 @@ namespace CaptIt
                 MessageBox.Show(e.Message, e.TargetSite.ToString());
             }
             ShowCheckCapturedForm(img, path);
+
+            return path;
+        }
+
+        public static void ShowImageEditor(string path, Image img)
+        {
+            if (MainForm.Setting.isShowEditorAfterCaptureSShot)
+            {
+                System.Diagnostics.Process.Start("mspaint.exe", string.Format("\"{0}\"", path));
+            }
+            if(MainForm.Setting.isCopytoClipboard)
+            {
+                Clipboard.SetImage(img);
+            }
         }
     }
 
@@ -216,13 +245,8 @@ namespace CaptIt
         {
             Image capturedSS = HotKeyManager.ScreenCapture.CaptureScreen();
 
-            HotKeyManager.SaveImage(capturedSS);
-
-            if (MainForm.Setting.isShowEditorAfterCaptureSShot)
-            {
-                ImageEdit editor = new ImageEdit(capturedSS);
-                editor.ShowForm();
-            }
+            string path = HotKeyManager.SaveImage(capturedSS);
+            HotKeyManager.ShowImageEditor(path, capturedSS);
 
             if (capturedSS != null) capturedSS.Dispose();
             GC.Collect();
@@ -258,12 +282,8 @@ namespace CaptIt
             dragForm d = new dragForm();
             d.dragFinished += (rect, capturedSS) =>
             {
-                HotKeyManager.SaveImage(capturedSS);
-                if (MainForm.Setting.isShowEditorAfterCaptureSShot)
-                {
-                    ImageEdit editor = new ImageEdit(capturedSS);
-                    editor.ShowForm();
-                }
+                string path = HotKeyManager.SaveImage(capturedSS);
+                HotKeyManager.ShowImageEditor(path, capturedSS);
 
                 isDragMode = false;
 
@@ -336,13 +356,8 @@ namespace CaptIt
             this.Rect = CaptureLib.InitializedSize(CaptureLib.fullScreensSize(), Rect);
             Image capturedSS = HotKeyManager.ScreenCapture.CaptureScreen(Rect);
 
-            HotKeyManager.SaveImage(capturedSS);
-
-            if (MainForm.Setting.isShowEditorAfterCaptureSShot)
-            {
-                ImageEdit editor = new ImageEdit(capturedSS);
-                editor.ShowForm();
-            }
+            string path = HotKeyManager.SaveImage(capturedSS);
+            HotKeyManager.ShowImageEditor(path, capturedSS);
 
             if (capturedSS != null) capturedSS.Dispose();
             GC.Collect();
@@ -381,30 +396,45 @@ namespace CaptIt
         private Keys setKey = Keys.F11 | Keys.Shift;
         public Keys SetKey { get { return setKey; } set { setKey = value; } }
 
+        bool isDragMode = false;
+
         public IntPtr windowHandle;
+
+        public WindowScreenShot()
+        {
+            try
+            {
+                Keys[] k = HotKeyManager.GetHandleKeySet(this);
+                this.key = k[0];
+                this.setKey = k[1];
+            }
+            catch { }
+        }
 
         public override void CaptureSShot()
         {
-            SetWindowHandle();
-            Image capturedSS = HotKeyManager.ScreenCapture.CaptureWindow(windowHandle);
-
-            HotKeyManager.SaveImage(capturedSS);
-
-            if (MainForm.Setting.isShowEditorAfterCaptureSShot)
+            try
             {
-                ImageEdit editor = new ImageEdit(capturedSS);
-                editor.ShowForm();
-            }
+                Image capturedSS = HotKeyManager.ScreenCapture.CaptureWindow(windowHandle);
+                string path = HotKeyManager.SaveImage(capturedSS);
+                HotKeyManager.ShowImageEditor(path, capturedSS);
 
-            if (capturedSS != null) capturedSS.Dispose();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+                if (capturedSS != null) capturedSS.Dispose();
+            }
+            finally
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
         }
 
         public void SetWindowHandle()
         {
+            if (isDragMode) return;
+            isDragMode = true;
             GetWindowProcess form = new GetWindowProcess();
-            //form.GotHandle += (i) => { this.windowHandle = i; };
+            form.captFinished += (h) => { windowHandle = h; isDragMode = false; };
+            form.captCanceled += () => isDragMode = false;
             form.ShowDialog();
         }
     }

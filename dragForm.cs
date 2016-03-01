@@ -83,7 +83,7 @@ namespace CaptIt
 
                         if(width == 0 || height == 0)
                         {
-                            MessageBox.Show("가로 혹은 세로의 길이가 0입니다!", "에러");
+                            //MessageBox.Show("가로 혹은 세로의 길이가 0입니다!", "에러");
                             dragCanceled();
                         }
 

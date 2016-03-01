@@ -21,6 +21,7 @@ namespace CaptIt.SettingPanels
         {
             MainForm.Setting.isShowEditorAfterCaptureSShot = this.checkBox1.Checked;
             MainForm.Setting.isShowCheckCapturedForm = this.checkBox2.Checked;
+            MainForm.Setting.isCopytoClipboard = this.checkBox3.Checked;
             MainForm.Setting.SaveSettings();
         }
 
@@ -28,6 +29,7 @@ namespace CaptIt.SettingPanels
         {
             this.checkBox1.Checked = MainForm.Setting.isShowEditorAfterCaptureSShot;
             this.checkBox2.Checked = MainForm.Setting.isShowCheckCapturedForm;
+            this.checkBox3.Checked = MainForm.Setting.isCopytoClipboard;
         }
     }
 }
